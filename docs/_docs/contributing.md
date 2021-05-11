@@ -11,15 +11,15 @@ We appreciate all contributions. If you are planning to contribute back bug-fixe
 
 If you plan to contribute new features or extensions to the core, please first open an issue and discuss the feature with us. Sending a pull request is fine too, but it will likely be merged more quickly if any design decisions are settled on beforehand in an issue.
 
-The R and Python versions are kept feature identical, but new features can be implemented for each method in separate commits.
+We try to keep the R and Python versions feature identical, but new features can be implemented for each method in separate commits.
 
 The following sections will describe how you can submit a pull request for adding enhancements, documentation changes or bug fixes to the codebase.
 
 ## 1. Forking the Prophet Repo
 
-You will need your own fork to work on the code. Go to the fbprophet project
-page https://github.com/facebook/prophet and hit the ``Fork`` button. You will
-want to clone your fork to your machine::
+You will need your own fork to work on the code. Go to the [prophet project
+page](https://github.com/facebook/prophet) and hit the ``Fork`` button. You will
+want to clone your fork to your machine:
 
 ```
 $ git clone https://github.com/your-user-name/prophet.git
@@ -27,7 +27,7 @@ $ cd prophet
 $ git remote add upstream https://github.com/facebook/prophet.git
 ```
 This creates the directory `prophet` and connects your repository to
-the upstream (main project) fbprophet repository.
+the upstream (main project) prophet repository.
 
 ## 2. Creating an environment with dependencies
 
@@ -36,7 +36,7 @@ development environment. This should contain the required dependencies.
 
 ### Python
 
-- Install either Anaconda (https://www.anaconda.com/download/) or miniconda (https://conda.io/miniconda.html)
+- Install either Anaconda [anaconda](https://www.anaconda.com/download/) or [miniconda](https://conda.io/miniconda.html)
 - Make sure your conda is up to date (``conda update conda``)
 - ``cd`` to the *prophet* source directory that you have cloned
 
@@ -56,7 +56,7 @@ $ pip install -r requirements.txt
 
 ### R
 
-Dependencies can be managed through ``Packrat`` (https://rstudio.github.io/packrat/) or ``renv`` (https://rstudio.github.io/renv/articles/renv.html).
+Dependencies can be managed through [``Packrat``](https://rstudio.github.io/packrat/) or [``renv``](https://rstudio.github.io/renv/articles/renv.html).
 
 For ``renv``, you must first initialise a new project local environment. 
 ```R
@@ -89,14 +89,13 @@ The next step is to build and install the development version of prophet in the 
 $ python setup.py develop
 ```
 
-You should be able to import *fbprophet* from your locally built version:
+You should be able to import *prophet* from your locally built version:
 
 ```bash
 $ python  # start an interpreter
->>> import fbprophet
->>> fbprophet.__version__
-'0.6.1.dev0'  # whatever the current github version is
-'0.10.0+dev46.g015daca'
+>>> import prophet
+>>> prophet.__version__
+'1.0'  # whatever the current github version is
 ```
 
 This will create the new environment, and not touch any of your existing environments,
@@ -110,7 +109,7 @@ $ conda info -e
 $ conda deactivate
 ```
 
-See the full conda docs here http://conda.pydata.org/docs.
+See the full conda docs [here](http://conda.pydata.org/docs).
 
 ### R
 
@@ -132,7 +131,7 @@ $ git checkout -b new-feature
 
 This changes your working directory to the new-feature branch.  Keep any
 changes in this branch specific to one bug or feature so it is clear
-what the branch brings to *fbprophet*. You can have many "new-features"
+what the branch brings to *prophet*. You can have many "new-features"
 and switch in between them using the ``git checkout`` command.
 
 To update this branch, you need to retrieve the changes from the master branch:
@@ -142,7 +141,7 @@ $ git fetch upstream
 $ git rebase upstream/master
 ```
 
-This will replay your commits on top of the latest *fbprophet* git master.  If this
+This will replay your commits on top of the latest *prophet* git master.  If this
 leads to merge conflicts, you must resolve these before submitting your pull
 request.  If you have uncommitted changes, you will need to ``git stash`` them
 prior to updating.  This will effectively store your changes and they can be
@@ -151,9 +150,7 @@ reapplied after updating.
 
 ## 5. Testing with Continuous Integration
 
-Adding tests is one of the most common requests after code is pushed to prophet. Therefore, it is worth getting in the habit of writing tests ahead of time so this is never an issue. Once your pull request is submitted, the Travis CI (continuous integration) service automatically triggers Python and R builds for Prophet and runs the tests. A pull-request will be considered for merging when you have an all ‘green’ build. If any tests are failing, then you will get a red ‘X’, where you can click through to see the individual failed tests.
-
-All contributors are strongly recommended to embrace Test Driven Development (TDD). First one must write an (initially failing) automated test case that defines a desired improvement or new function, then produce the minimum amount of code to pass that test. So, before actually writing any code, you should write your tests.
+Adding tests is one of the most common requests after code is pushed to prophet. Therefore, it is worth getting in the habit of writing tests ahead of time so this is never an issue. Once your pull request is submitted, the Github Actions CI (continuous integration) service automatically triggers Python and R builds for Prophet and runs the tests. A pull-request will be considered for merging when you have an all ‘green’ build. If any tests are failing, then you will get a red ‘X’, where you can click through to see the individual failed tests.
 
 ### Python
 
@@ -257,7 +254,7 @@ upstream	https://github.com/facebook/prophet.git (fetch)
 upstream	https://github.com/facebook/prophet.git (push)
 ```
 
-Now your code is on GitHub, but it is not yet a part of the fbprophet project. For that to happen, a pull request needs to be submitted on GitHub.
+Now your code is on GitHub, but it is not yet a part of the prophet project. For that to happen, a pull request needs to be submitted on GitHub.
 
 ## 9. Review your code
 

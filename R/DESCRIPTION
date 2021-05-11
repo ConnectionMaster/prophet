@@ -1,7 +1,7 @@
 Package: prophet
 Title: Automatic Forecasting Procedure
-Version: 0.7
-Date: 2020-02-10
+Version: 1.0
+Date: 2021-03-08
 Authors@R: c(
   person("Sean", "Taylor", email = "sjtz@pm.me", role = c("cre", "aut")),
   person("Ben", "Letham", email = "bletham@fb.com", role = "aut")
@@ -24,6 +24,7 @@ Imports:
     extraDistr,
     ggplot2,
     grid,
+    lubridate,
     methods,
     RcppParallel (>= 5.0.1),
     rstan (>= 2.18.1),
@@ -34,6 +35,8 @@ Imports:
     tidyr (>= 0.6.1),
     xts
 Suggests:
+    cmdstanr,
+    posterior,
     knitr,
     testthat,
     readr,
@@ -41,7 +44,7 @@ Suggests:
 SystemRequirements: GNU make, C++11
 Biarch: true
 License: MIT + file LICENSE
-LinkingTo: 
+LinkingTo:
     BH (>= 1.66.0),
     Rcpp (>= 0.12.0),
     RcppParallel (>= 5.0.1),
